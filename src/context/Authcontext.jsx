@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { getWeather } from "../data_fetching/getdata";
+import { getWeather,getCurrentWeather } from "../data_fetching/getdata";
+
 
 export const AuthContext = createContext();
 
@@ -7,20 +8,25 @@ export function AuthProvider({ children }) {
   const [location, setLocation] = useState("Bronx"); // default
   const [weather, setWeather] = useState(null);
   const [dailyWeather, setDailyWeather] = useState([]);
+  const [currentWeather,setCurrentWeather] = useState(null)
 
   useEffect(() => {
     const fetchWeather = async () => {
-      if (!location) return;
-
-      const data = await getWeather(location);
-      setWeather(data);
-
-      // Calculate daily summary if data.list exists
-      if (data?.list) {
-        const dailySummary = getDailySummary(data.list);
-        setDailyWeather(dailySummary);
-      }
-    };
+        if (!location) return;
+        try {
+          const data = await getWeather(location);
+          const curr_data = await getCurrentWeather(location);
+          setCurrentWeather(curr_data);
+          setWeather(data);
+      
+          if (data?.list) {
+            const dailySummary = getDailySummary(data.list);
+            setDailyWeather(dailySummary);
+          }
+        } catch (error) {
+          console.error("Failed to fetch weather data:", error);
+        }
+      };
 
     fetchWeather();
   }, [location]);
@@ -69,7 +75,11 @@ export function AuthProvider({ children }) {
     weather,
     setWeather,
     dailyWeather,
+    currentWeather, 
+    setCurrentWeather
   };
+
+
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

@@ -1,3 +1,20 @@
+import { useContext } from "react"
+import { AuthContext } from "../context/Authcontext"
+
+
+
+
 export default function MainWeatherBox(){
-    return(<p>hi</p>)
+    const {currentWeather} = useContext(AuthContext)
+    return(
+        <div>
+                <button onClick={()=>{console.log(currentWeather)}}>Click</button>
+
+        
+        </div>
+    
+    
+
+)
+    
 }
