@@ -5,6 +5,7 @@ import './App.css'
 import { AuthContext } from './context/Authcontext'
 import MiniWeatherBox from './Components/MiniWeatherBox'
 import SearchBar from './Components/SearchBar'
+import MainWeatherBox from './Components/MainWeatherBox'
 
 function App() {
   
@@ -12,6 +13,7 @@ function App() {
     <>
         <SearchBar/>
         <MiniWeatherBox/>
+        <MainWeatherBox/>
     </>
  
   
