@@ -4,11 +4,16 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { AuthContext } from './context/Authcontext'
 import MiniWeatherBox from './Components/MiniWeatherBox'
+import SearchBar from './Components/SearchBar'
 
 function App() {
   
   return (
-    <MiniWeatherBox/>
+    <>
+        <SearchBar/>
+        <MiniWeatherBox/>
+    </>
+ 
   
   )
 }
