@@ -53,3 +53,20 @@ body {
   cursor: pointer;
   background-color: #5888db;
 }
+
+.main-weather-container{
+  display: flex;
+  width: 100%;
+  gap: 50px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-left{
+  width: 300px;
+}
+
+.main-right{
+  width: 300px;
+}
