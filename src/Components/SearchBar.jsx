@@ -7,6 +7,7 @@ export default function SearchBar() {
 
   const handleSearch = () => {
     setLocation(inputValue);
+    setInputValue("")
   };
 
   return (

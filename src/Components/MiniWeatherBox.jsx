@@ -21,11 +21,12 @@ const weatherIcons = {
 };
 
 export default function MiniWeatherBox() {
-  const { location, dailyWeather } = useContext(AuthContext);
+  const { location, dailyWeather,currentWeather } = useContext(AuthContext);
 
   return (
     <>
-      <h2>{location}</h2>
+
+    {currentWeather && <h1>{location}, {currentWeather.sys.country}</h1>}
       <div className="daily-container">
         {dailyWeather?.map(({ date, avgTemp, weather }) => (
           <div key={date} className="day-box">

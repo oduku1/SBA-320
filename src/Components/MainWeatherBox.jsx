@@ -66,9 +66,12 @@ export default function MainWeatherBox() {
   
   
     const iconSrc = weatherIcons[currentWeather.weather[0].main] || weatherIcons["Clear"];
+
+  
   
     return (
       <div className="main-weather-container">
+  
     
         <div className="main-left">
         <button onClick={() => { console.log(currentWeather) }}>log weather</button>
@@ -77,6 +80,7 @@ export default function MainWeatherBox() {
           <h1>{days[day]}</h1>
           <h2>{months[month]} {date}, {year}</h2>
           <h3>Temp: {currentWeather.main.temp}°F</h3>
+          <p>Feels Like: {currentWeather.main.feels_like}°F </p>
   
           <img src={iconSrc} alt={currentWeather.weather[0].description} />
           <p>{currentWeather.weather[0].description}</p>
@@ -88,7 +92,6 @@ export default function MainWeatherBox() {
 
         <h4>sunrise: {sunriseStr} EST</h4>
         <h4>sunset: {sunsetStr} EST</h4>
-        <h4>sunset:{}</h4>
         </div>
       </div>
     );

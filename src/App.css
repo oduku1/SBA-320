@@ -70,3 +70,10 @@ body {
 .main-right{
   width: 300px;
 }
+
+.main-weather-container div{
+  
+  height: 350px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  border-radius: 10px;
+}
