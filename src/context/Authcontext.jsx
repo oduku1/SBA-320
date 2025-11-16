@@ -15,9 +15,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      if (!location) return; // only ignore empty input
-  
-      // Clear old error every time user searches again
+      if (!location) return; 
       setError(null);
   
       try {

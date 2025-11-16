@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/Authcontext";
 
-// Map weather main descriptions to icon URLs (using OpenWeather's icons here for simplicity)
 const weatherIcons = {
   Clear: "http://openweathermap.org/img/wn/01d@2x.png",
   Clouds: "http://openweathermap.org/img/wn/03d@2x.png",

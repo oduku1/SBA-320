@@ -74,15 +74,12 @@ export default function MainWeatherBox() {
   
     
         <div className="main-left">
-        <button onClick={() => { console.log(currentWeather) }}>log weather</button>
-        <button onClick={() => { console.log(sunriseLocal) }}>log date</button>
-  
           <h1>{days[day]}</h1>
           <h2>{months[month]} {date}, {year}</h2>
           <h3>Temp: {currentWeather.main.temp}°F</h3>
           <p>Feels Like: {currentWeather.main.feels_like}°F </p>
   
-          <img src={iconSrc} alt={currentWeather.weather[0].description} />
+          <img src={iconSrc} alt={currentWeather.weather[0].description} style={{width:"80px"}}/>
           <p>{currentWeather.weather[0].description}</p>
         </div>
   
