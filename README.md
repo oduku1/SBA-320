@@ -14,12 +14,6 @@ Users can search any location and view:
 
 ------------------------------------------------------------------------
 
-## 📸 Preview
-
-*(Insert your screenshot here --- example:)*\
-`![App Screenshot](./screenshot.png)`
-
-------------------------------------------------------------------------
 
 ## 🚀 Features
 
