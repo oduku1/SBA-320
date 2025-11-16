@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/Authcontext";
+import WeatherChart from "./WeatherChart";
 
 export default function MainWeatherBox() {
   const { currentWeather, location } = useContext(AuthContext);
@@ -82,6 +83,8 @@ export default function MainWeatherBox() {
 
         <h4>Sunrise: {sunriseStr} EST</h4>
         <h4>Sunset: {sunsetStr} EST</h4>
+        <br></br>
+        <WeatherChart/>
       </div>
     </div>
   );
